@@ -94,6 +94,9 @@ void draw() {
   if(groundhogY <= spacing){
     groundhogY = spacing;
   }
+  if(initSoilY<=-1440){
+    initSoilY=-1440;
+  }
   
 	switch (gameState) {
 
@@ -292,9 +295,14 @@ void keyPressed(){
 	// Add your moving input code here
     switch (keyCode){
      case DOWN:
+     if(initSoilY>=-1440){
        initSoilY-=spacing;
        cabbageY-=spacing;
        soldierY-=spacing;
+     }
+     if(initSoilY<=-1440){
+      groundhogY+=spacing;
+     }
        break;
      case LEFT:
        groundhogX-=spacing;
