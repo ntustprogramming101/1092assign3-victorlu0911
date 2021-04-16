@@ -215,6 +215,8 @@ void draw() {
             groundhogX = spacing*4;
             groundhogY = spacing; 
             soldierY = floor(random(2,6))*80;
+            cabbageX = floor(random(0,8))*80;
+            cabbageY = floor(random(2,6))*80;
           }
 
        //if groundhog eat cabbage
