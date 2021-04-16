@@ -81,7 +81,20 @@ void draw() {
     }
     /* ------ End of Debug Function ------ */
 
-    
+  //moving space
+  if(groundhogX >= width-spacing){
+    groundhogX = width-spacing;
+  }
+  if(groundhogX <= 0){
+    groundhogX = 0;
+  }
+  if(groundhogY >= height-spacing){
+    groundhogY = height-spacing;
+  }
+  if(groundhogY <= spacing){
+    groundhogY = spacing;
+  }
+  
 	switch (gameState) {
 
 		case GAME_START: // Start Screen
@@ -215,8 +228,10 @@ void draw() {
             groundhogX = spacing*4;
             groundhogY = spacing; 
             soldierY = floor(random(2,6))*80;
+            if(cabbageX<width){
             cabbageX = floor(random(0,8))*80;
             cabbageY = floor(random(2,6))*80;
+            }
           }
 
        //if groundhog eat cabbage
